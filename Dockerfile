@@ -26,6 +26,8 @@ EXPOSE 8080/tcp 8081/tcp 8443/tcp 8843/tcp 8880/tcp 3478/udp
 
 USER nobody
 
+WORKDIR /var/lib/unifi
+
 ENTRYPOINT ["/bin/docker-entrypoint.sh"]
 
 CMD ["/usr/bin/java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
