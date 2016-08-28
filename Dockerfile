@@ -1,8 +1,9 @@
 FROM openjdk:8u102-jre
 
+MAINTAINER ty.auvil@gmail.com
+
 ENV DUMB_VERSION=1.1.3 \
     DEBIAN_FRONTEND=noninteractive \
-    JVM_HEAP=256
 
 ADD https://github.com/Yelp/dumb-init/releases/download/v${DUMB_VERSION}/dumb-init_${DUMB_VERSION}_amd64 /bin/dumb-init
 
@@ -27,4 +28,4 @@ USER nobody
 
 ENTRYPOINT ["/bin/docker-entrypoint.sh"]
 
-CMD ["/usr/bin/java", "-Xmx${JVM_HEAP}M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
+CMD ["/usr/bin/java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
