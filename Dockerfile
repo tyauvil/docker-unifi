@@ -3,7 +3,7 @@ FROM openjdk:8u102-jre
 MAINTAINER ty.auvil@gmail.com
 
 ENV DUMB_VERSION=1.1.3 \
-    DEBIAN_FRONTEND=noninteractive \
+    DEBIAN_FRONTEND=noninteractive
 
 ADD https://github.com/Yelp/dumb-init/releases/download/v${DUMB_VERSION}/dumb-init_${DUMB_VERSION}_amd64 /bin/dumb-init
 
